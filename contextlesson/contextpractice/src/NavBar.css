@@ -1,0 +1,13 @@
+
+#navbar{
+    display: grid;
+    grid-template-columns: 50vw 50vw;
+    justify-items: center;
+}
+button{
+    height:10vh;
+    width: 100%;
+    background-color: bisque;
+    border-radius: 5%;
+
+}

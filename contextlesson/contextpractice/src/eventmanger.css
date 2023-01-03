@@ -1,0 +1,13 @@
+h1 {
+  text-align: center;
+}
+
+#button1 {
+  width: 140px;
+}
+
+#eventmangerdiv {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
