@@ -14,11 +14,11 @@ function EventList() {
         {newEvent.map((event, indexEvent) => {
           return (
             <div id="listdiv">
-              <ul key={indexEvent}>
-                <li key={"indexEvent" + "name"}>{event.name}</li>
-                <li key={"indexEvent" + "startdate"}>{event.startDate}</li>
-                <li key={"indexEvent" + "enddate"}>{event.endDate}</li>
-                <li key={"indexEvent" + "description"}>{event.description}</li>
+              <ul>
+                <li>{event.name}</li>
+                <li>{event.description}</li>
+                <li>{event.startDate}</li>
+                <li>{event.endDate}</li>
               </ul>
               <button>edit</button>
               <button onClick={() => deleteEvent(indexEvent)}>delete</button>
