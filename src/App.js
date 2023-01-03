@@ -1,23 +1,33 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import LogIn from './LogIn';
+import Register from './RegisterPage';
+import User from './User';
 
 function App() {
+  const [userId,setUserId]=useState(0)
+  const [show,setShow]=useState(0)
+  const [user, setUser] = useState([])
+  const [userLog,setUserLog] =useState({name:"",password:""})
+  function EqualUser(){
+  for(let i=0;i<user.length;i++){
+  if(user[i].name===userLog.name && user[i].password===userLog.password){
+    setUserId(i)
+    setShow(1)
+    // console.log(user)
+    return(userId)
+    break;
+  }
+  }
+}
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path='/' element={<Register user={user} setUser={setUser} />}></Route>
+        <Route path='/LogIn' element={<LogIn EqualUser={EqualUser} userLog={userLog} setUserLog={setUserLog} user={user}/>}></Route>
+        <Route path='/user/:userId' element={<User userId={userId} user={user}/>}></Route>
+      </Routes>
     </div>
   );
 }
